@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+    transition: background-color 0.5s ease-in-out;
+}
+
+body.positive {
+    background: linear-gradient(135deg, #dff9fb, #a1c4fd);
+}
+
+body.philosophical {
+    background: linear-gradient(135deg, #2c3e50, #5dade2);
+    color: #ecf0f1;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba (0,0,0,0.2);
+}
+
+#generateQuote {
+    font-size: 18px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.copy-button {
+    background: #f1c40f;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.copy-button:hover {
+    background: #d4ac0d;
+    transform: scale(1.05);
+}
+
+.twitter-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background:#1da1f2;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.twitter-button:hover {
+    transform: scale(1.05);
+    background: #0d8bf2;
+}
+
+
+#quoteDisplay {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 30px 50px;
+    margin: 20px;
+    max-width: 600px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+    line-height: 1.8;
+    color: #333;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    position: relative;
+    font-style: italic;
+}
+
+#quoteDisplay::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 40px;
+    color: #ccc;
+}
+
+#quoteDisplay::after {
+    content: '"';
+    position: absolute;
+    bottom: -10px;
+    right: 20px;
+    font-size: 40px;
+    color: #ccc;
+}
+
+#quoteDisplay.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease-in-out;
+}
+
+@media (max-width: 600px) {
+    #quoteDisplay::before,
+    #quoteDisplay::after {
+        font-size: 30px;
+        top: 5px;
+        left: 10px;
+        right: 10px;
+    }
+    button {
+        width: 90%;
+        font-size: 14px;
+    }
+    
+}
